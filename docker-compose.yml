@@ -1,0 +1,11 @@
+version: '3.6'
+services:
+    nodered:
+        build: build
+        image: texnoid/rpi-nodered
+        ports:
+            - "1880:1880"
+        volumes:
+            - "${PWD}/data:/root/data"
+        privileged: true
+        restart: "unless-stopped"
